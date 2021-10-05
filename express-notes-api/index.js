@@ -58,8 +58,9 @@ app.post('/api/notes', (req, res) => {
         };
         res.status(500).json(unexpectedError);
         console.error(err);
+      } else {
+        res.send(req.body);
       }
-      res.send(req.body);
     });
   }
 });
@@ -84,8 +85,9 @@ app.delete('/api/notes/:id', (req, res) => {
           };
           res.status(500).json(unexpectedError);
           console.error(err);
+        } else {
+          res.status(204).json();
         }
-        res.status(204).json();
       });
     }
   }
@@ -119,8 +121,9 @@ app.put('/api/notes/:id', (req, res) => {
         };
         res.status(500).json(unexpectedError);
         console.error(err);
+      } else {
+        res.status(200).json(req.body);
       }
-      res.status(200).json(req.body);
     });
   }
 });
