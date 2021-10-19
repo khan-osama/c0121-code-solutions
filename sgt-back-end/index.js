@@ -79,7 +79,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
     db.query(sql, params)
       .then(result => {
         const grade = result.rows[0];
-        if (grade === 0) {
+        if (!grade) {
           res.status(404).json({
             error: `Cannot find grade with gradeId ${gradeId}`
           });
@@ -106,7 +106,7 @@ app.delete('/api/grades/:gradeId', (req, res) => {
     db.query(sql, params)
       .then(result => {
         const grade = result.rows[0];
-        if (grade === 0) {
+        if (!grade) {
           res.status(404).json({
             error: `Cannot find grade with gradeId ${gradeId}`
           });
