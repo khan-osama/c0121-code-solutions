@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.slides-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  width: 800px;
+  padding-bottom: 20px;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.left-arrow {
+  padding-left: 20px;
+}
+
+.right-arrow {
+  padding-right: 20px;
+}
+
+.dots-container {
+  display: flex;
+  position: absolute;
+  bottom: 23%;
+  left: 48%;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid black;
+  margin: 0 3px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #000;
+}
