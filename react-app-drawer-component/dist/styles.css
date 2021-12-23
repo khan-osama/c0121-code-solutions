@@ -35,7 +35,7 @@
 }
 
 .drawercontaineropen {
-  transform: translate(0px);
+  transform: translate(0);
 }
 
 .rowLinks {
@@ -67,10 +67,9 @@ a {
 .overlay {
   background-color: #575757;
   position: fixed;
-  top:0;
-  bottom:0;
-  left:200px;
-  right:0;
-  opacity:0.8;
-  z-index: 998;
+  top: 0;
+  bottom: 0;
+  left: 200px;
+  right: 0;
+  opacity: 0.8;
 }
