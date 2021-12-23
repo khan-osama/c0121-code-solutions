@@ -4,65 +4,58 @@
   padding: 0;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
-}
-
-.carousel-container {
-  border: 3px solid black;
-  width: 40%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
+.carousel {
   align-items: center;
-}
-
-.image-container {
-  width: 400px;
-  height: 400px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  margin: 2rem auto;
+  padding-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: black;
 }
 
-.pokemon {
-  width: 90%;
+.c-images {
+  display: flex;
+  padding-left: 12.5px;
+  transform: translateX(0);
+  transition: transform 0.25s;
 }
 
-.hidden {
-  display: none;
+img {
+  border-radius: 5px;
 }
 
 .fa-chevron-left,
 .fa-chevron-right {
-  font-size: 3em;
-  margin: auto;
+  color: black;
   cursor: pointer;
-  transition: 0.5s ease;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  height: 3rem;
+  z-index: 1;
 }
 
-.fa-chevron-left:hover,
-.fa-chevron-right:hover {
-  color: red;
+.fa-chevron-left {
+  left: 5px;
 }
 
-.circle-icons {
+.fa-chevron-right {
+  right: 5px;
+}
+
+.dots-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 39%;
+  left: 48%;
 }
 
 .fa-circle {
-  padding: 0 4px;
   cursor: pointer;
-}
-
-.noSelect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }

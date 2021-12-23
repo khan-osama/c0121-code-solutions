@@ -1,22 +1,51 @@
-// change dot shades
-var grabDots = document.querySelectorAll('i.fa-circle');
-var grabImages = document.querySelectorAll('img');
-var leftChev = document.querySelector('i.fa-chevron-left');
-var rightChev = document.querySelector('i.fa-chevron-right');
-var startingIndex = 0;
-dotClick(startingIndex);
+const cImages = document.querySelector('.c-images');
+const leftArrow = document.getElementById('previous');
+const rightArrow = document.getElementById('next');
+const numImages = document.querySelectorAll('.c-images img').length;
+const dotButtons = document.querySelectorAll('.fa-circle');
+const dotParent = document.querySelector('.dots-container');
+let imagePosition = 1;
 
-function ChevClick(i) {
-  dotClick(startingIndex += i);
-}
-
-function dotClick(i) {
-  if (grabDots[i].className === 'far fa-circle') {
-    for (var j = 0; j < grabDots.length; j++) {
-      grabDots[j].className = 'far fa-circle';
-      grabImages[j].className = 'hidden pokemon';
-    }
-    grabDots[i].className = 'fas fa-circle';
-    grabImages[i].className = 'pokemon noSelect';
+leftArrow.addEventListener('click', event => {
+  if (imagePosition === 1) {
+    imagePosition = numImages;
+    cImages.style.transform = `translateX(${(imagePosition - 1) * -20}%)`;
+  } else {
+    imagePosition--;
+    cImages.style.transform = `translateX(${(imagePosition - 1) * -20}%)`;
   }
+  setDots();
+});
+
+rightArrow.addEventListener('click', event => {
+  moveForward();
+});
+
+dotButtons.forEach((button, index) => {
+  button.addEventListener('click', event => {
+    imagePosition = index + 1;
+    const selectedDots = document.querySelector('.far.fa-circle.fa-lg.fas');
+    selectedDots.classList.remove('fas');
+    button.classList.add('fas');
+    cImages.style.transform = `translateX(${index * -20}%)`;
+  });
+});
+
+function moveForward() {
+  if (imagePosition === numImages) {
+    imagePosition = 1;
+    cImages.style.transform = `translateX(${(imagePosition - 1) * -20}%)`;
+  } else {
+    imagePosition++;
+    cImages.style.transform = `translateX(${(imagePosition - 1) * -20}%)`;
+  }
+  setDots();
 }
+
+function setDots() {
+  const selectedDots = document.querySelector('.far.fa-circle.fa-lg.fas');
+  selectedDots.classList.remove('fas');
+  dotParent.children[imagePosition - 1].classList.add('fas');
+}
+
+setInterval(moveForward, 3000);
