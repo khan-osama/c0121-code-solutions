@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+  align-items: center;
+  display: flex;
+  margin: 2rem auto;
+  padding-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: black;
+}
+
+.c-images {
+  display: flex;
+  padding-left: 12.5px;
+  transform: translateX(0);
+  transition: transform 0.25s;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  color: black;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  height: 3rem;
+  z-index: 1;
+}
+
+.fa-chevron-left {
+  left: 5px;
+}
+
+.fa-chevron-right {
+  right: 5px;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 39%;
+  left: 48%;
+}
+
+.fa-circle {
+  cursor: pointer;
+}
